@@ -60,9 +60,40 @@ a:hover {
     text-decoration: none;
 }
 
+button {
+    width: 100%;
+    height: 44px;
+    border: none;
+    color: white;
+    background: #49AA26;
+    padding: 0;
+    border-radius: 0.26rem;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #3dd705;
+}
+
 .button.new {
     display: inline-block;
     margin-bottom: 0.8rem;
+}
+
+.button.cancel {
+    color: #e92929;
+    border: 2px #e92929 solid;
+    border-radius: 0.26rem;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    opacity: 0.62;
+}
+
+.button.cancel:hover {
+    opacity: 1;
 }
 
 /*Balance ================================= */
@@ -106,6 +137,12 @@ a:hover {
 
 /* Table ================================== */
 
+#transactions {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+}
+
 #data-table {
     width: 100%;
     border-spacing: 0 0.44rem;
@@ -140,6 +177,70 @@ table tbody tr:hover {
 table td {
     background: white;
     padding: 1rem 2rem;
+}
+
+/* Modal ================================== */
+
+.modal-overlay {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    opacity: 0;
+    visibility: hidden;
+}
+
+ .modal-overlay.active {
+     opacity: 1;
+     visibility: visible;
+ }
+
+.modal {
+    background: #f0f2f5;
+    padding: 2.6rem;
+    position: relative;
+}
+
+/* Form ==================================== */
+
+#form {
+    max-width: 530px;
+}
+
+#form h2 {
+    margin-top: 0;
+}
+
+input {
+    border: none;
+    border-radius: 0.22rem;
+    padding: 0.62rem;
+    width: 100%;
+}
+
+.input-group {
+    margin-top: 0.8rem;
+}
+
+.input-group small {
+    opacity: 0.44;
+}
+
+.input-group.actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.input-group.actions .button,
+.input-group.actions button {
+    width: 44%;
 }
 
 /* Footer ================================== */
