@@ -194,6 +194,8 @@ table td {
 
     opacity: 0;
     visibility: hidden;
+
+    z-index: 999;
 }
 
  .modal-overlay.active {
@@ -205,6 +207,7 @@ table td {
     background: #f0f2f5;
     padding: 2.6rem;
     position: relative;
+    
 }
 
 /* Form ==================================== */
