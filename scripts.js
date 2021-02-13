@@ -33,7 +33,6 @@ const Transaction = {
     all: transactions,
     add(transaction) {
         Transaction.all.push(transaction)
-
         App.reload()
     },
     remove(index) {
@@ -93,7 +92,7 @@ const DOM = {
         document.getElementById('totalDisplay').innerHTML = Utils.currencyFormat(Transaction.total())
     },
     clearTransactions() {
-        DOM.transactionsContainer.innerHTML = ""
+        DOM.transactionsContainer.innerHTML = ''
     }
 }
 
@@ -108,7 +107,7 @@ const Utils = {
             currency: "BRL"
         })
 
-        return signal + value
+        return signal + ' ' + value
     }
 }
 
@@ -125,17 +124,27 @@ const Form = {
         }
     },
 
-    formatData(){
+    /* formatData(){
         //
-    },
+    }, */
     validateFields(){
         const {description, amount, date} = Form.getValues()
+
+        if(description.trim() === "" ||
+            amount.trim() === "" ||
+            date.trim() === "") {
+                throw new Error("Por favor, preencha todos os campos.")
+            }
     },
     submit(event) {
         event.preventDefault()
-
-        Form.validateFields()
-        Form.formatData()
+        try{
+            Form.validateFields()
+        }catch(error) {
+            alert(error.message)
+        }
+        
+        /* Form.formatData() */
     }
 }
 
@@ -149,10 +158,10 @@ const App = {
         DOM.updateBalance()
 
         Transaction.add({
-            id: 44,
-            description: "X",
+            id: 8,
+            description: 'X',
             amount: 200,
-            date: 26 / 01 / 2021
+            date: '26 / 01 / 2021',
         })
     },
     reload() {
