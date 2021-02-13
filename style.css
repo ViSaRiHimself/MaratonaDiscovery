@@ -198,7 +198,7 @@ table td {
     z-index: 999;
 }
 
- .modal-overlay.active {
+.modal-overlay.active {
      opacity: 1;
      visibility: visible;
  }
